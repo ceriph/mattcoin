@@ -1,0 +1,230 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #EEE;
+  color: #3C5863;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+
+  overflow: visible;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 10px;
+
+  -webkit-columns: 100px 2; /* Chrome, Safari, Opera */
+  -moz-columns: 100px 2; /* Firefox */
+  columns: 100px 2;
+
+  -webkit-column-width: 300px;
+  -moz-column-width: 300px;
+  column-width: 300px;
+
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.content p, .content ul, .content table {
+  text-align: justify;
+  margin: 0 auto;
+}
+
+.content p {
+  width: 95%;
+}
+
+.content ul {
+  width: 80%;
+}
+
+.content table {
+  width: 50%;
+}
+
+.box, .box-display {
+  padding: 1%;
+  margin: 1%;
+
+  float: left;
+  width: 96%;
+
+  background-color: white;
+
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.box img {
+  float: left;
+  margin-right: 20px;
+  max-width: 90%;
+}
+
+.box .info {
+  float: left;
+}
+
+.fill {
+  -webkit-column-span: all; /* Chrome, Safari, Opera */
+  column-span: all;
+  float: none !important;
+}
+
+.header {
+  background-color: #01A7C2;
+  color: white;
+}
+
+table {
+  border-spacing: 0;
+  margin-top: 10px;
+}
+
+td {
+  padding: 5px 20px 5px 5px;
+  border-top: 1px solid #CCC;
+}
+
+.left {
+  float: left;
+  padding-left: 10px;
+}
+
+.wide {
+  width: 80% !important;
+}
+
+p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-wrap: break-word;
+}
+
+form {
+  width: 95%;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #3C5863;
+  text-transform: uppercase;
+  -webkit-column-span: all;
+  column-span: all;
+
+  text-align: justify;
+  margin: 0 auto;
+  width: 95%;
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+h4 {
+  -webkit-margin-before: 1.6em;
+}
+
+h5 {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 0;
+}
+
+a {
+  color: #01A7C2;
+}
+
+a:visited {
+  color: #01A7C2;
+}
+
+a:hover {
+  color: #3C5863;
+}
+
+button {
+  background-color: #01A7C2;
+  border: 0;
+  color: #F5F1E3;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #02CBEA;
+}
+
+button:disabled {
+  background-color: #CCC;
+}
+
+.code {
+  font-family: "Courier New", serif;
+  background-color: #F1F1F1;
+  padding-left: 10px;
+}
+
+.footer {
+  padding-top: 30px;
+}
+
+.inline {
+  display: inline-block;
+  width: auto;
+}
+
+.card {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  text-align: left;
+}
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
+
+  body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .box + .box, .box + .box-display, .box-display + .box-display, .box-display + .box {
+    border-top: 2px solid #01A7C2;
+  }
+
+  .box-display {
+    background-color: white;
+  }
+
+  .breakAfter {
+    page-break-after: always;
+    break-after: always;
+
+  }
+
+  .breakBefore {
+    page-break-before: always;
+    break-before: always;
+  }
+
+  body, div {
+    float:none !important;
+  }
+}

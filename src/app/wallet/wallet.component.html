@@ -1,0 +1,10 @@
+<div class="box">
+  <h1>Wallet</h1>
+  <p>Enter your wallet address:</p>
+  <input type="text" [(ngModel)]="address">
+  <button (click)="calculateBalance()">Load</button>
+
+  <div>
+    <h1>Tokens: {{balance}}</h1>
+  </div>
+</div>

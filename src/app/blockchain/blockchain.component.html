@@ -1,0 +1,7 @@
+<div class="box" *ngFor="let block of blockchain | async">
+  <h1>Block #{{block.index}}</h1>
+  <p>Timestamp: {{block.timestamp}}</p>
+  <p>Data: {{block.data}}</p>
+  <p>Hash: {{block.hash}}</p>
+  <p>Previous: {{block.previous}}</p>
+</div>

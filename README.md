@@ -16,6 +16,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## TODO
 
+- Feature - implement better mining simulation (and 'fees' for transactions)
+- Feature - implement wallet generation (with public key address and private key)
+- Feature - implement decentralised nodes
+- Feature - implement transaction confirmations
+- Feature - implement block verification
+- Bug - hash should be the key for blocks
+
 
 
 

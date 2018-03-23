@@ -1,0 +1,19 @@
+<div class="box fill">
+  <div class="box-header">
+    <h1>Pending Transactions</h1>
+  </div>
+  <div class="box-content">
+    <p class="transaction" *ngFor="let transaction of pending | async">{{transaction.hash}} - {{transaction.from}}
+      ({{transaction.amount}}) -> {{transaction.to}}</p>
+  </div>
+</div>
+
+<div class="box fill">
+  <div class="box-header">
+    <h1>Confirmed Transactions</h1>
+  </div>
+  <div class="box-content">
+    <p class="transaction" *ngFor="let transaction of confirmed">{{transaction.hash}} - {{transaction.from}}
+      ({{transaction.amount}}) -> {{transaction.to}}</p>
+  </div>
+</div>

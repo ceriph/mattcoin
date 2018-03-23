@@ -18,4 +18,8 @@ export class BlockchainComponent implements OnInit {
   ngOnInit() {
     this.blockchain = this.blockchainService.list();
   }
+
+  mine() {
+    this.blockchainService.create();
+  }
 }

@@ -1,10 +1,20 @@
 <div class="box">
-  <h1>Wallet</h1>
-  <p>Enter your wallet address:</p>
-  <input type="text" [(ngModel)]="address">
-  <button (click)="calculateBalance()">Load</button>
+  <div class="box-header"><h1>Wallet</h1></div>
+  <div class="box-content">
+    <p><label>Address: <input type="text" [(ngModel)]="address"></label></p>
+    <p>
+      <button (click)="calculateBalance()">Load</button>
+    </p>
+    <p>Balance: {{balance}}</p>
+  </div>
+</div>
 
-  <div>
-    <h1>Tokens: {{balance}}</h1>
+<div class="box" *ngIf="balance > 0">
+  <div class="box-header"><h1>Send Tokens</h1></div>
+  <div class="box-content">
+    <label>To: <input type="text" [(ngModel)]="to"></label>
+    <label>Amount: <input type="text" [(ngModel)]="amount"></label>
+    <button (click)="send()">Send</button>
+    <p>{{message}}</p>
   </div>
 </div>

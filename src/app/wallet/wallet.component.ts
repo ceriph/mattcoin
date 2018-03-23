@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BlockchainService} from "../blockchain/blockchain.service";
+import {TransactionService} from "../transactions/transaction.service";
+import {Transaction} from "../transactions/transaction";
 
 @Component({
   selector: 'app-wallet',
@@ -11,7 +13,13 @@ export class WalletComponent implements OnInit {
   address: string;
   balance: number;
 
-  constructor(private blockchainService: BlockchainService) {
+  to: string;
+  amount: number;
+
+  message: string;
+
+  constructor(private blockchainService: BlockchainService,
+              private transactionService: TransactionService) {
   }
 
   ngOnInit() {
@@ -19,15 +27,41 @@ export class WalletComponent implements OnInit {
 
   calculateBalance() {
     this.blockchainService.list().subscribe(blocks => {
-      this.balance = 0;
-      blocks.forEach(block => {
-        const regex = new RegExp(this.address + '\\[(\\d*)\\]', "g");
-        let match = regex.exec(block.data);
-        while (match != null) {
-          this.balance += +match[1];
-          match = regex.exec(block.data);
-        }
+      this.transactionService.list().subscribe(transactions => {
+
+        this.balance = 0;
+
+        // process balance from blocks
+        blocks.forEach(block => {
+          block.transactions.forEach(transaction => {
+            if (this.address === transaction.from) {
+              this.balance -= +transaction.amount;
+            } else if (this.address === transaction.to) {
+              this.balance += +transaction.amount;
+            }
+          });
+        });
+
+        // process balance from unconfirmed pending
+        transactions.forEach(transaction => {
+          if (this.address === transaction.from) {
+            this.balance -= +transaction.amount;
+          } else if (this.address === transaction.to) {
+            this.balance += +transaction.amount;
+          }
+        });
       });
     });
+  }
+
+  send() {
+    if (this.amount > this.balance) {
+      this.message = "Insufficient funds.";
+    } else {
+      this.transactionService.create(new Transaction(this.amount, this.address, this.to, Date.now()));
+      this.message = "Transaction sent.";
+      this.amount = 0;
+      this.to = "";
+    }
   }
 }

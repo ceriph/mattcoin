@@ -1,7 +1,17 @@
-<nav class="header no-print">
-  <a routerLink="/blockchain" routerLinkActive="active">Blockchain</a>
-  <a routerLink="/wallet" routerLinkActive="active">Wallet</a>
-</nav>
+<div class="header">
+  <nav class="header no-print">
+    <img class="header-img" src="/assets/logo.png">
+    <a routerLink="/blockchain" routerLinkActive="active">
+      <button>Blockchain</button>
+    </a>
+    <a routerLink="/transactions" routerLinkActive="active">
+      <button>Transactions</button>
+    </a>
+    <a routerLink="/wallet" routerLinkActive="active">
+      <button>Wallet</button>
+    </a>
+  </nav>
+</div>
 <div class="content">
   <router-outlet></router-outlet>
 </div>

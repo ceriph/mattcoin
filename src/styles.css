@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #EEE;
-  color: #3C5863;
+  background-color: #01161E;
+  color: #01161E;
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
@@ -9,21 +9,37 @@ body {
   overflow: visible;
 }
 
-.content {
-  margin: 0 auto;
+.header {
+  /*background-color: #F5F1E3;*/
+  color: white;
   padding: 10px;
+}
 
-  -webkit-columns: 100px 2; /* Chrome, Safari, Opera */
-  -moz-columns: 100px 2; /* Firefox */
-  columns: 100px 2;
+.header-img {
+  height: 50px;
+  float: left;
+}
 
-  -webkit-column-width: 300px;
-  -moz-column-width: 300px;
-  column-width: 300px;
+.content {
+  margin: 0 10% auto;
+  padding: 10px;
+}
 
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
+.box {
+  float: left;
+  width: 100%;
+  margin: 1%;
+
+  background-color: #F5F1E3;
+}
+
+.box-header {
+  background-color: #DDDBCB;
+}
+
+.box-content {
+  padding: 1%;
+  width: 96%;
 }
 
 .clickable {
@@ -45,41 +61,6 @@ body {
 
 .content table {
   width: 50%;
-}
-
-.box, .box-display {
-  padding: 1%;
-  margin: 1%;
-
-  float: left;
-  width: 96%;
-
-  background-color: white;
-
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-
-.box img {
-  float: left;
-  margin-right: 20px;
-  max-width: 90%;
-}
-
-.box .info {
-  float: left;
-}
-
-.fill {
-  -webkit-column-span: all; /* Chrome, Safari, Opera */
-  column-span: all;
-  float: none !important;
-}
-
-.header {
-  background-color: #01A7C2;
-  color: white;
 }
 
 table {
@@ -115,15 +96,15 @@ form {
 h1, h2, h3, h4, h5 {
   color: #3C5863;
   text-transform: uppercase;
-  -webkit-column-span: all;
-  column-span: all;
 
   text-align: justify;
   margin: 0 auto;
   width: 95%;
 
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
+
+  font-weight: normal;
 }
 
 h4 {
@@ -135,28 +116,24 @@ h5 {
   -webkit-margin-after: 0;
 }
 
-a {
-  color: #01A7C2;
-}
-
-a:visited {
-  color: #01A7C2;
+a, a:visited {
+  color: #01161E !important;
 }
 
 a:hover {
-  color: #3C5863;
+  color: #006989 !important;
 }
 
 button {
-  background-color: #01A7C2;
+  background-color: #006989;
   border: 0;
-  color: #F5F1E3;
+  color: #DDDBCB;
   padding: 8px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #02CBEA;
+  background-color: #01A7C2;
 }
 
 button:disabled {
@@ -193,38 +170,5 @@ button:disabled {
 @media print {
   .no-print, .no-print * {
     display: none !important;
-  }
-
-  body {
-    background-color: white;
-    padding: 0;
-    margin: 0;
-  }
-
-  .box {
-    width: 100%;
-  }
-
-  .box + .box, .box + .box-display, .box-display + .box-display, .box-display + .box {
-    border-top: 2px solid #01A7C2;
-  }
-
-  .box-display {
-    background-color: white;
-  }
-
-  .breakAfter {
-    page-break-after: always;
-    break-after: always;
-
-  }
-
-  .breakBefore {
-    page-break-before: always;
-    break-before: always;
-  }
-
-  body, div {
-    float:none !important;
   }
 }

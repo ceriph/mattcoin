@@ -12,7 +12,9 @@ import {AngularFireAuth} from "angularfire2/auth/auth";
 import {LoginService} from "./login/login.service";
 import {BlockchainComponent} from './blockchain/blockchain.component';
 import {BlockchainService} from "./blockchain/blockchain.service";
-import { WalletComponent } from './wallet/wallet.component';
+import {WalletComponent} from './wallet/wallet.component';
+import {TransactionService} from "./transactions/transaction.service";
+import {TransactionsComponent} from './transactions/transactions.component';
 
 @NgModule({
   imports: [
@@ -26,12 +28,14 @@ import { WalletComponent } from './wallet/wallet.component';
     AppComponent,
     BlockchainComponent,
     LoginComponent,
-    WalletComponent
+    WalletComponent,
+    TransactionsComponent
   ],
   providers: [
     AngularFireAuth,
     LoginService,
-    BlockchainService
+    BlockchainService,
+    TransactionService
   ],
   bootstrap: [AppComponent]
 })

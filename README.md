@@ -1,6 +1,6 @@
 # Mattcoin
 
-A simple blockhain for demo  
+A simple blockchain demo for a bit of fun  
 
 ## Development server
 

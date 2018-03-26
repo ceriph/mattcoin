@@ -7,9 +7,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireDatabaseModule} from "angularfire2/database/database.module";
 import {environment} from "../environments/environment";
-import {LoginComponent} from "./login/login.component";
 import {AngularFireAuth} from "angularfire2/auth/auth";
-import {LoginService} from "./login/login.service";
 import {BlockchainComponent} from './blockchain/blockchain.component';
 import {BlockchainService} from "./blockchain/blockchain.service";
 import {WalletComponent} from './wallet/wallet.component';
@@ -27,13 +25,11 @@ import {TransactionsComponent} from './transactions/transactions.component';
   declarations: [
     AppComponent,
     BlockchainComponent,
-    LoginComponent,
     WalletComponent,
     TransactionsComponent
   ],
   providers: [
     AngularFireAuth,
-    LoginService,
     BlockchainService,
     TransactionService
   ],

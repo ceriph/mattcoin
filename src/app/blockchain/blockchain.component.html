@@ -1,14 +1,14 @@
 <div class="box" *ngFor="let block of blockchain | async">
   <div class="box-header"><h1>Block #{{block.index}}</h1></div>
   <div class="box-content">
-    <p>Timestamp: {{block.timestamp}}</p>
-    <p>Transactions:</p>
+    <p><b>Timestamp </b> - {{block.timestamp}}</p>
+    <p><b>Previous</b> - {{block.previous}}</p>
+    <p><b>Hash </b> - {{block.hash}}</p>
+    <p><b>Transactions</b></p>
     <p *ngFor="let transaction of block.transactions">{{transaction.hash}} - {{transaction.from}}
       ({{transaction.amount}}) -> {{transaction.to}}</p>
-    <p>Hash: {{block.hash}}</p>
-    <p>Previous: {{block.previous}}</p>
   </div>
 </div>
 <div class="box">
-  <button class="mine" (click)="mine()">Mine</button>
+  <button class="large" (click)="mine()">ECO MINING</button>
 </div>

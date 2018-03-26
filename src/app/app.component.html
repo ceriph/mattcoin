@@ -1,17 +1,20 @@
-<div class="header">
-  <nav class="header no-print">
+<div class="container">
+  <div class="header">
     <img class="header-img" src="/assets/logo.png">
-    <a routerLink="/blockchain" routerLinkActive="active">
-      <button>Blockchain</button>
-    </a>
-    <a routerLink="/transactions" routerLinkActive="active">
-      <button>Transactions</button>
-    </a>
-    <a routerLink="/wallet" routerLinkActive="active">
-      <button>Wallet</button>
-    </a>
-  </nav>
-</div>
-<div class="content">
-  <router-outlet></router-outlet>
+    <p class="title">mattcoin</p>
+    <nav>
+      <a routerLink="/blockchain" routerLinkActive="active">
+        <button class="navButton">Blockchain</button>
+      </a>
+      <a routerLink="/transactions" routerLinkActive="active">
+        <button class="navButton">Transactions</button>
+      </a>
+      <a routerLink="/wallet" routerLinkActive="active">
+        <button class="navButton">Wallet</button>
+      </a>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </div>
